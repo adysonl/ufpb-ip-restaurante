@@ -1,0 +1,29 @@
+﻿╔═══════════════════════════╗
+║          M E N U          ║
+╠═══╦═══════════════════════╣
+║ 1 ║ Cardápio              ║
+╠═══╬═══════════════════════╣
+║ 2 ║ Pedido                ║
+╠═══╬═══════════════════════╣
+║ 3 ║ Produtos              ║
+╠═══╬═══════════════════════╣                                
+║ 4 ║ Relatórios            ║
+╠═══╬═══════════════════════╣
+║ 5 ║ Sair                  ║
+╚═══╩═══════════════════════╝
+2.
+    opcoes de pratos prontos
+    adcionais
+    bebidas
+    Voltar
+3.
+    cadastrar
+    editar
+    remover
+    Voltar
+
+4.
+    Diario
+    Mensal
+    Anual
+    Voltar
