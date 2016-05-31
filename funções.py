@@ -1,4 +1,3 @@
-lista = ["titulo", "opc1", "opc2", "opc3"]
 def larguraDaColuna(lista):
     maior = len(lista[0])
     for opcao in lista[1:]:
@@ -20,9 +19,13 @@ def centralizarPalavra(palavra, largura):
 
 def menu(lista):
     larg = larguraDaColuna(lista)
-    print("*", "*"*larg, "*", sep = "")
-    print("*", centralizarPalavra(lista[0], larg),"*", sep="")
+    print("﻿╔═══","═"*larg,"═══╗", sep = "")
+    print("║   ", centralizarPalavra(lista[0], larg),"   ║", sep="")
+    print("╠═══╦", larg*"═","══╣", sep = "")
+    num = 1
     for i in lista[1:]:
-        print("*", palavraEspaco(i, larg) , "*",sep = "")
-
-menu(lista)
+        print("║ ", num," ║ ", palavraEspaco(i, larg) , " ║",sep = "")
+        print("╠═══╬", larg*"═","══╣", sep = "")
+        num+=1
+    print("║ ", len(lista)," ║ ", palavraEspaco("Sair", larg)," ║", sep = "")
+    print("╚═══╩", larg*"═","══╝", sep = "")
