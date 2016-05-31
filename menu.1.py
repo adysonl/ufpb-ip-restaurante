@@ -1,4 +1,4 @@
-def tamanho(lista): #recebe uma lista com padrão [titulo[opcao1, opcao2, ...]
+def tamanho(lista): #recebe uma lista com padrão [titulo[opcao1, opcao2, ...]]
     maior = len(lista[0]) #maior = tamanho do titulo
     if maior % 2 != 0: # se o tamanho do titulo for impar
         lista[0]+= " " # adicionar 1 espaço ao titulo
