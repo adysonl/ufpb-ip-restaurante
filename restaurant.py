@@ -9,5 +9,5 @@ while True:
     elif escolha == "1":
         f.cadastrar()
         f.cls()
-    elif opcao == "2":
-        cardapio()
+    elif escolha == "2":
+        f.cardapio()

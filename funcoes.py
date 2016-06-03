@@ -6,30 +6,55 @@ def arqLista(arquivo):
     file.close()
     return lista
 
+def separar(lista, posicao, pulo):
+    novalista = []
+    for i in range(posicao, len(lista), pulo):
+        novalista.append(lista[i])
+    return novalista
+
 def cardapio():
     lista = arqLista("cadastrodepratos.txt")
-    larg = larguraDaColuna(lista)
-    
+    larguranome = larguraDaColuna(separar(lista, 1, 4))
+    larguravalor = 7
+    larguratotal = larguranome + larguravalor
+    print("╔═══════", "═"* larguratotal, "═══════╗", sep = "")
+    print("║        ", centralizarPalavra("CARDAPIO", larguratotal),"       ║", sep="")
+    print("╠═══════╦═","═"* larguranome,"═╦══════════╣", sep = "")
     for i in range(0,len(lista),4):
-            
-
+        print("║ ",lista[i]," ║ ",palavraEspaco(lista[i+1], larguranome)," ║ R$ %2.2f" %float(lista[i+2])," ║", sep = "")
+        print("╠═══════╬═","═"*larguranome,"═╬══════════╣", sep = "")
+    print("╚═══════╩═","═"*larguranome,"═╩══════════╝", sep = "")
+    print("Para mais detalhes sobre o prato, digite abaixo o seu código.")
+    print("Para voltar ao menu inicial, digite 0.")
+    while True:
+        codigo = input(">>>")
+        if codigo == "0":
+           cls()
+           break
+        elif codigo not in separar(lista, 0, 4):
+                print("ERRO - Código não encontrado. Tente Novamente.")
+        for i in range(len(lista)):
+            if codigo == lista[i]:
+                print(lista[i+3])    
 def cls():
     for i in range(50):
         print()
         
-def porcao():
-    print("Digite as porções que vem no prato [para finalizar digite 0]")
-    porcao = ""
+def codigodacomida():
     while True:
-        entrada = input(">>>")
-        if entrada == "0":
+        codigo = input("Código: ")
+        if len(codigo) < 5:
+            codigo = ((5 - len(codigo))*"0") + codigo
             break
-        porcao +=entrada+", "
-    return porcao
+        if len(codigo) > 5:
+            print("ERRO: O código deve ser composto por até 5 números")
+        if len(codigo) == 5:
+            break
+    return codigo
 
 def cadastrar():
     arquivo = open("cadastrodepratos.txt", "a")
-    arquivo.write(input("Código: ")+"\n")
+    arquivo.write(input("Descreva o prato: ")+"\n")
     arquivo.write(input("Nome: ")+"\n")
     arquivo.write(input("Valor: ")+"\n")
     arquivo.write(porcao()+"\n")

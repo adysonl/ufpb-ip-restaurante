@@ -17,20 +17,13 @@
 ║              C A R D A P I O              ║
 ╠═══════════╦════════════════════╦══════════╣
 ║  Código   ║ Nome da Comidinha  ║ Valor    ║
+╠═══════════╬════════════════════╬══════════╣
 ╠═══════════╩════════════════════╩══════════╣
-║ as porções aqui bem lindas oie            ║
-╠═══════════╦════════════════════╦══════════╣
-║  Código   ║ Nome da Comidinha  ║ Valor    ║
-╠═══════════╩════════════════════╩══════════╣
-║ as porções aqui bem lindas oie            ║
-╠═══════════╦════════════════════╦══════════╣
-║  Código   ║ Nome da Comidinha  ║ Valor    ║
-╠═══════════╩════════════════════╩══════════╣
-║ as porções aqui bem lindas oie            ║
-╠═══════════╦════════════════════╦══════════╣
-║  Código   ║ Nome da Comidinha  ║ Valor    ║
-╠═══════════╩════════════════════╩══════════╣
+║      Para mais detalhes sobre o prato,    ║
+║         digite abaixo o seu código.       ║
+║   Para voltar ao menu inicial, digite 0.  ║
 ╚═══════════════════════════════════════════╝
+
 3.
     cadastrar
     editar
