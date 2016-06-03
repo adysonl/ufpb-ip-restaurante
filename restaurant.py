@@ -1,4 +1,13 @@
 import funcoes as f
 
 opcoes = ["Restaurante Brizolinha", "Cadastrar Prato", "Ver Pratos", "Alterar Prato", "Deletar Pratos"] 
-f.menu(opcoes)
+while True:
+    escolha = f.menu(opcoes)
+    f.cls()
+    if escolha == "5":
+        break
+    elif escolha == "1":
+        f.cadastrar()
+        f.cls()
+    elif opcao == "2":
+        cardapio()
