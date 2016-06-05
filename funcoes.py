@@ -6,6 +6,11 @@ def arqLista(arquivo):
     file.close()
     return lista
 
+def regravar(arquivo, lista):
+    arq = open(arquivo, "w")
+    for linha in lista:
+        arq.write(linha+"\n")
+    arq.close()
 def separar(lista, posicao, pulo):
     novalista = []
     for i in range(posicao, len(lista), pulo):
@@ -54,10 +59,10 @@ def codigodacomida():
 
 def cadastrar():
     arquivo = open("cadastrodepratos.txt", "a")
-    arquivo.write(input("Descreva o prato: ")+"\n")
+    arquivo.write(codigodacomida()+"\n")
     arquivo.write(input("Nome: ")+"\n")
     arquivo.write(input("Valor: ")+"\n")
-    arquivo.write(porcao()+"\n")
+    arquivo.write(input("Descreva o prato: ")+"\n")
     arquivo.close()
 
 def larguraDaColuna(lista):
@@ -94,3 +99,26 @@ def menu(lista):
     print("Digite o nº correspondente a opção desejada.")
     escolha = input(">>>")
     return escolha
+
+def deletar():
+    arquivo = "cadastrodepratos.txt"
+    lista = arqLista(arquivo)
+    while True:
+        codigo = input("Digite o codigo: ")
+        if codigo not in lista:
+            print("ERRO - Código não encontrado. Verifique o código e tente novamente!")
+        else:
+            for i in range(0,len(lista)-1,4):
+                if codigo == lista[i]:
+                    print("Código: %s" %lista[i], "Nome: %s" %lista[i+1], "Valor: %s" %lista[i+2], "Descrição: %s" %lista[i+3], sep = "\n")
+                    print("Deseja realmente apagar o prato? [s/n]")
+                    opcao = input(">")
+                    if opcao == "s":
+                        for x in range(4):
+                            del lista[i]
+                        print("Deletado com sucesso!")
+                        break
+        regravar(arquivo,lista)
+        break
+
+    

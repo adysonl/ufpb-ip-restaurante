@@ -1,16 +1,20 @@
 00001
 Gnocchi
-29
+33
 Gnocchi de batata a bolognesa. 
 00002
 Ravioli
-32
+44
 Ravioli de cogumelos ao pomodoro. 
 00003
 Risotto ao Ragu
-34
+44
 Risotto ao ragu de costela desfiada. 
 00004
 Cordeiro
 39
 Cordeiro ao molho rústico com polenta mole.
+00005
+Strogonoff
+27
+Strogonoff de frango, arroz branco e batata palha.
