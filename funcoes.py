@@ -121,4 +121,23 @@ def deletar():
         regravar(arquivo,lista)
         break
 
-    
+def alterar():
+    arquivo = "cadastrodepratos.txt"
+    lista = arqLista(arquivo)
+    while True:
+        codigo = input("Digite o código: ")
+        if codigo not in lista:
+            print("ERRO - Código não encontrado. Verifique o código e tente novamente!")
+        else:
+            for i in range(0,len(lista)-1,4):
+                if codigo == lista[i]:
+                    print("Código: %s" %lista[i], "Nome: %s" %lista[i+1], "Valor: %s" %lista[i+2], "Descrição: %s" %lista[i+3], sep = "\n")
+                    print("Deseja realmente alterar o prato? [s/n]")
+                    opcao = input(">")
+                    if opcao == "s":
+                        novocodigo = codigodacomida()
+                        lista[i] = novocodigo
+                        print("Código alterado com sucesso!")  
+                        break
+        regravar(arquivo,lista)
+        break    

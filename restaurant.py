@@ -11,6 +11,8 @@ while True:
         f.cls()
     elif escolha == "2":
         f.cardapio()
+    elif escolha == "3":
+        f.alterar()
     elif escolha == "4":
         f.deletar()
         
