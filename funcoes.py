@@ -29,7 +29,7 @@ def cardapio():
         print("║ ",lista[i]," ║ ",palavraEspaco(lista[i+1], larguranome)," ║ R$ %2.2f" %float(lista[i+2])," ║", sep = "")
         print("╠═══════╬═","═"*larguranome,"═╬══════════╣", sep = "")
     print("╚═══════╩═","═"*larguranome,"═╩══════════╝", sep = "")
-    print("Para mais detalhes sobre o prato, digite abaixo o seu código.")
+    print("Para mais detalhes sobre os pratos, digite abaixo o seu código.")
     print("Para voltar ao menu inicial, digite 0.")
     while True:
         codigo = input(">>>")
@@ -58,11 +58,13 @@ def codigodacomida():
     return codigo
 
 def cadastrar():
+    minitabela("CADASTRAR PRATO")
+    print("Favor inserir as seguintes informações:")
     arquivo = open("cadastrodepratos.txt", "a")
     arquivo.write(codigodacomida()+"\n")
     arquivo.write(input("Nome: ")+"\n")
     arquivo.write(input("Valor: ")+"\n")
-    arquivo.write(input("Descreva o prato: ")+"\n")
+    arquivo.write(input("Descrição: ")+"\n")
     arquivo.close()
 
 def larguraDaColuna(lista):
@@ -100,9 +102,15 @@ def menu(lista):
     escolha = input(">>>")
     return escolha
 
+def minitabela(nome):
+    larg = 40
+    print("╔","═"*larg,"╗",sep = "")
+    print("║", centralizarPalavra(nome, larg),"║", sep = "")
+    print("╚", larg*"═","╝", sep = "")
 def deletar():
     arquivo = "cadastrodepratos.txt"
     lista = arqLista(arquivo)
+    minitabela("DELETAR PRATO")
     while True:
         codigo = input("Digite o codigo: ")
         if codigo not in lista:
@@ -122,6 +130,7 @@ def deletar():
         break
 
 def alterar():
+    minitabela("ALTERAR PRATO")
     arquivo = "cadastrodepratos.txt"
     lista = arqLista(arquivo)
     while True:

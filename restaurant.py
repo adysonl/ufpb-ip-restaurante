@@ -5,6 +5,7 @@ while True:
     escolha = f.menu(opcoes)
     f.cls()
     if escolha == "5":
+        print("Obrigado, volte sempre.")
         break
     elif escolha == "1":
         f.cadastrar()
@@ -15,4 +16,5 @@ while True:
         f.alterar()
     elif escolha == "4":
         f.deletar()
-        
+    else:
+        print("Opção Inválida. Tente Novamente.")
