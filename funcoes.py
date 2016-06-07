@@ -11,6 +11,7 @@ def regravar(arquivo, lista):
     for linha in lista:
         arq.write(linha+"\n")
     arq.close()
+    
 def separar(lista, posicao, pulo):
     novalista = []
     for i in range(posicao, len(lista), pulo):
@@ -40,7 +41,8 @@ def cardapio():
                 print("ERRO - Código não encontrado. Tente Novamente.")
         for i in range(len(lista)):
             if codigo == lista[i]:
-                print(lista[i+3])    
+                print(lista[i+3])
+                
 def cls():
     for i in range(50):
         print()
@@ -66,6 +68,8 @@ def cadastrar():
     arquivo.write(input("Valor: ")+"\n")
     arquivo.write(input("Descrição: ")+"\n")
     arquivo.close()
+    cls()
+    print("Cadastrado com sucesso!")
 
 def larguraDaColuna(lista):
     maior = len(lista[0])
@@ -107,6 +111,7 @@ def minitabela(nome):
     print("╔","═"*larg,"╗",sep = "")
     print("║", centralizarPalavra(nome, larg),"║", sep = "")
     print("╚", larg*"═","╝", sep = "")
+    
 def deletar():
     arquivo = "cadastrodepratos.txt"
     lista = arqLista(arquivo)
@@ -124,29 +129,49 @@ def deletar():
                     if opcao == "s":
                         for x in range(4):
                             del lista[i]
+                        cls()
                         print("Deletado com sucesso!")
                         break
         regravar(arquivo,lista)
         break
+def opcaoalterar():
+    while True:
+        form = input(">")
+        if form == "0":
+            nova = codigodacomida()
+            break
+        elif form == "1":
+            nova = input("Digite o novo nome: ")
+            break
+        elif form == "2":
+            nova = input("Digite o novo valor: ")
+            break
+        elif form == "3":
+            nova = input("Digite a nova descrição: ")
+            break
+        else:
+            print("Opção inválida, tente novamente.")
+    return [int(form), nova]
 
 def alterar():
     minitabela("ALTERAR PRATO")
     arquivo = "cadastrodepratos.txt"
     lista = arqLista(arquivo)
     while True:
-        codigo = input("Digite o código: ")
+        codigo = input("Digite o antigo código: ")
         if codigo not in lista:
             print("ERRO - Código não encontrado. Verifique o código e tente novamente!")
         else:
-            for i in range(0,len(lista)-1,4):
+            for i in range(len(lista)-1):
                 if codigo == lista[i]:
-                    print("Código: %s" %lista[i], "Nome: %s" %lista[i+1], "Valor: %s" %lista[i+2], "Descrição: %s" %lista[i+3], sep = "\n")
-                    print("Deseja realmente alterar o prato? [s/n]")
-                    opcao = input(">")
-                    if opcao == "s":
-                        novocodigo = codigodacomida()
-                        lista[i] = novocodigo
-                        print("Código alterado com sucesso!")  
-                        break
+                    print("0 - Código: %s" %lista[i], "1 - Nome: %s" %lista[i+1], "2 - Valor: %s" %lista[i+2], "3 - Descrição: %s" %lista[i+3], sep = "\n")
+                    print("\nO que deseja alterar?[0,1,2,3]")
+                    novas = opcaoalterar()
+                    i2 = novas[0]
+                    novo = novas[1]
+                    lista[i+i2] = novo
+                    cls()
+                    print("Alterado com sucesso!")  
+                    break
         regravar(arquivo,lista)
-        break    
+        break        

@@ -9,7 +9,6 @@ while True:
         break
     elif escolha == "1":
         f.cadastrar()
-        f.cls()
     elif escolha == "2":
         f.cardapio()
     elif escolha == "3":
