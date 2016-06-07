@@ -134,6 +134,7 @@ def deletar():
                         break
         regravar(arquivo,lista)
         break
+    
 def opcaoalterar():
     while True:
         form = input(">")
