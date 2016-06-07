@@ -75,13 +75,13 @@ def codigodacomida():
             break
     return codigo
 
-def cardapio():
-    lista = arqLista("cadastrodepratos.txt")
+def cardapio(arquivo, titulo):
+    lista = arqLista(arquivo)
     larguranome = larguraDaColuna(separar(lista, 1, 4))
     larguravalor = 7
     larguratotal = larguranome + larguravalor
     print("╔═══════", "═"* larguratotal, "═══════╗", sep = "")
-    print("║        ", centralizarPalavra("CARDAPIO", larguratotal),"       ║", sep="")
+    print("║        ", centralizarPalavra( titulo, larguratotal),"       ║", sep="")
     print("╠═══════╦═","═"* larguranome,"═╦══════════╣", sep = "")
     for i in range(0,len(lista),4):
         print("║ ",lista[i]," ║ ",palavraEspaco(lista[i+1], larguranome)," ║ R$ %2.2f" %float(lista[i+2])," ║", sep = "")
@@ -127,12 +127,15 @@ def deletar():
                     print("Deseja realmente apagar o prato? [s/n]")
                     opcao = input(">")
                     if opcao == "s":
+                        lixo = open("lixeira.txt", "a")
                         for x in range(4):
+                            lixo.write(lista[i]+"\n")
                             del lista[i]
                         cls()
                         print("Deletado com sucesso!")
                         break
         regravar(arquivo,lista)
+        lixo.close()
         break
     
 def opcaoalterar():
@@ -176,3 +179,4 @@ def alterar():
                     break
         regravar(arquivo,lista)
         break        
+    

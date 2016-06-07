@@ -1,0 +1,8 @@
+00055
+Sopa
+12
+Sopa de carne com legumes.
+00033
+Pipoca
+10
+Pipoca de milho, amanteigada com sazon.
