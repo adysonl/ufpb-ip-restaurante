@@ -11,7 +11,8 @@ def regravar(arquivo, lista):
     for linha in lista:
         arq.write(linha+"\n")
     arq.close()
-    
+
+
 def separar(lista, posicao, pulo):
     novalista = []
     for i in range(posicao, len(lista), pulo):
@@ -65,15 +66,26 @@ def cls():
         
 def codigodacomida():
     while True:
+
         codigo = input("Código: ")
         if len(codigo) < 5:
             codigo = ((5 - len(codigo))*"0") + codigo
             break
-        if len(codigo) > 5:
+        elif len(codigo) > 5:
             print("ERRO: O código deve ser composto por até 5 números")
-        if len(codigo) == 5:
+        else:
             break
     return codigo
+
+def codigo():
+    lista = arqLista("cadastrodepratos.txt")
+    code = codigodacomida()
+    for i in range(0, len(lista), 4):
+            if code == lista[i]:
+                print("Código já cadastrado! Tente novamente!")
+                code = codigodacomida()
+            else:
+                return code
 
 def cardapio(arquivo, titulo):
     lista = arqLista(arquivo)
@@ -104,7 +116,7 @@ def cadastrar():
     minitabela("CADASTRAR PRATO")
     print("Favor inserir as seguintes informações:")
     arquivo = open("cadastrodepratos.txt", "a")
-    arquivo.write(codigodacomida()+"\n")
+    arquivo.write(codigo()+"\n")
     arquivo.write(input("Nome: ")+"\n")
     arquivo.write(input("Valor: ")+"\n")
     arquivo.write(input("Descrição: ")+"\n")
