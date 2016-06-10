@@ -10,7 +10,7 @@ while True:
     elif escolha == "1":
         f.cadastrar()
     elif escolha == "2":
-        f.cardapio("cadastrodepratos.txt", "CADASTRO")
+        f.cardapio("cadastrodepratos.txt", "CARDÁPIO")
     elif escolha == "3":
         f.alterar()
     elif escolha == "4":
