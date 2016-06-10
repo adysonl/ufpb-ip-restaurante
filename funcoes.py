@@ -145,10 +145,12 @@ def deletar():
                             del lista[i]
                         cls()
                         print("Deletado com sucesso!")
+                        lixo.close()
                         break
+            break
         regravar(arquivo,lista)
-        lixo.close()
-        break
+        
+        
     
 def opcaoalterar():
     while True:

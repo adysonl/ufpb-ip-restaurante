@@ -22,10 +22,6 @@ Strogonoff de frango, arroz branco e batata palha.
 Roastbeef
 38
 Roastbeef ao molho de cerveja preta com arroz e legumes à julienne.
-00007
-Filé de Frango
-29
-Filé de frango ao creme de cogumelos com gallete de polenta.
 00008
 Fusilli
 38
@@ -34,3 +30,7 @@ Fusilli ao creme de açafrão, salmão defumado e abobrinha.
 Risotto de Alcachofra
 34
 Risotto de alcachofra e pesto de rúcula.
+mt10!
+melhores
+10
+melhor
