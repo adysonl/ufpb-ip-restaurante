@@ -65,7 +65,7 @@ def cls():
         
 def codigodacomida():
     while True:
-        codigo = input("Código: ")
+        codigo = input("Código: ").upper()
         if len(codigo) < 5:
             codigo = ((5 - len(codigo))*"0") + codigo
             break
