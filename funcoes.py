@@ -12,7 +12,6 @@ def regravar(arquivo, lista):
         arq.write(linha+"\n")
     arq.close()
 
-
 def separar(lista, posicao, pulo):
     novalista = []
     for i in range(posicao, len(lista), pulo):
@@ -66,7 +65,6 @@ def cls():
         
 def codigodacomida():
     while True:
-
         codigo = input("Código: ")
         if len(codigo) < 5:
             codigo = ((5 - len(codigo))*"0") + codigo
@@ -156,6 +154,7 @@ def opcaoalterar():
     while True:
         form = input(">")
         if form == "0":
+            print("Digite o novo ", end = "")
             nova = codigodacomida()
             break
         elif form == "1":
@@ -176,7 +175,7 @@ def alterar():
     arquivo = "cadastrodepratos.txt"
     lista = arqLista(arquivo)
     while True:
-        codigo = input("Digite o antigo código: ")
+        codigo = input("Digite o código atual: ")
         if codigo not in lista:
             print("ERRO - Código não encontrado. Verifique o código e tente novamente!")
         else:
