@@ -13,8 +13,24 @@ Risotto ao ragu de costela desfiada.
 00004
 Cordeiro
 39
-Cordeiro ao molho r�stico com polenta mole.
+Cordeiro ao molho rústico com polenta mole.
 00005
 Strogonoff
 27
 Strogonoff de frango, arroz branco e batata palha.
+00006
+Roastbeef
+38
+Roastbeef ao molho de cerveja preta com arroz e legumes à julienne.
+00007
+Filé de Frango
+29
+Filé de frango ao creme de cogumelos com gallete de polenta.
+00008
+Fusilli
+38
+Fusilli ao creme de açafrão, salmão defumado e abobrinha.
+00009
+Risotto de Alcachofra
+34
+Risotto de alcachofra e pesto de rúcula.
