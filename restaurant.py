@@ -1,6 +1,6 @@
 import funcoes as f
 
-opcoes = ["Restaurante Brizolinha", "Cadastrar Prato", "Ver Pratos", "Alterar Prato", "Deletar Pratos"] 
+opcoes = ["Restaurante Brizolinha", "Cadastrar Prato", "Ver Pratos", "Alterar Prato", "Deletar Pratos", "Lixeira"] 
 while True:
     escolha = f.menu(opcoes)
     f.cls()
