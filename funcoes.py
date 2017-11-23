@@ -31,11 +31,11 @@ def palavraEspaco(palavra, largura):
     espacos = (largura-len(palavra))*" "
     return palavra + espacos
 
-def centralizarPalavra(palavra, largura):
-    if len(palavra) % 2 != 0:
-        palavra += " "
-    espaco = int((largura - len(palavra))/2)*" "
-    return espaco + palavra + espaco
+def centralizarPalavra(palavra, largura): #recebe o que vai ser centralizado, e a largura do texto (o tam da maior linha )
+    if len(palavra) % 2 != 0:             #se o tam da palavra for impar, não dá pra centralizar daí
+        palavra += " "                    #adiciona um espaço
+    espaco = int((largura - len(palavra))/2)*" "  # a quantidade de espaços de cada lado da palavra é igual a (larg da linha - o tam da palavra) /2
+    return espaco + palavra + espaco              # retorna a linha centralizada
 
 def menu(lista):
     larg = larguraDaColuna(lista)
