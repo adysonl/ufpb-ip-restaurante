@@ -39,7 +39,7 @@ def centralizarPalavra(palavra, largura): #recebe o que vai ser centralizado, e 
 
 def menu(lista):
     larg = larguraDaColuna(lista)
-    print("﻿╔═══","═"*larg,"═══╗", sep = "")
+    print("╔═══","═"*larg,"═══╗", sep = "")
     print("║   ", centralizarPalavra(lista[0], larg),"   ║", sep="")
     print("╠═══╦", larg*"═","══╣", sep = "")
     num = 1
